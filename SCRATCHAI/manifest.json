@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Scratch Auto Circle",
+  "version": "1.0",
+  "description": "Automatically adds a circle sprite when a Scratch project is opened.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://scratch.mit.edu/projects/*/editor/"],
+      "js": ["content.js"]
+    }
+  ]
+}
